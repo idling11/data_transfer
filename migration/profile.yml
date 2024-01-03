@@ -1,0 +1,45 @@
+config:
+    # The name of the migration project
+    name: "test_migration_project"
+
+    # The version of the migration project
+    version: "1.0.0"
+
+    # The description of the migration project
+    description: "My Project Description"
+
+    # The source db config
+    source:
+        type: "clickzetta"
+        service: ""
+        workspace: ""
+        instance: ""
+        vcluster: "DEFAULT"
+        username: ""
+        password: ""
+        instanceId: 32
+#        migration_dbs:
+#            - "db1"
+#            - "db2"
+        migration_tables:
+            - "data_integration.customers"
+#            - "db2.table2"
+
+    # The destination db config
+    destination:
+        type: "doris"
+        fe_servers:
+           - "xx:32230"
+        username: "root"
+        password: ""
+
+    # The concurrency of the migration
+    concurrency: 1
+
+    # If migration quit when a task failed
+    quit_on_failure: false
+
+    # The log level
+    log_level: "info"
+
+
